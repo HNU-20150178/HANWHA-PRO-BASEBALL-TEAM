@@ -1,0 +1,61 @@
+import java.util.Scanner;
+
+public class E07 {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+		int mok;
+		int na;
+		String a = "";
+		int i;
+		while(true) {
+			System.out.print("10진수를 입력하세요 :");
+			int num = scanner.nextInt();
+			if (num == 0)
+				break;
+			if (num < 1) {
+				System.out.println("오류");
+				continue;
+			}
+			System.out.print("변환진수 : ");
+			i = scanner.nextInt();
+			if(i == 2 || i == 8 || i == 16) {
+				if(i!=16) {
+				while(num!=0) {
+					mok = num / i;
+					na = num % i;
+					a = na+a;
+					num=mok;
+				}
+			}else {
+				while(num!=0) {
+					mok = num / i;
+					na = num % i;
+					if(na == 10)
+						a="A"+a;
+					else if(na == 11)
+						a="B"+a;
+					else if(na == 12)
+						a="C"+a;
+					else if(na == 13)
+						a="D"+a;
+					else if(na == 14)
+						a="E"+a;
+					else if(na == 15)
+						a="F"+a;
+					else{
+						a = na+a;
+					}
+					num=mok;
+				}
+			}
+				
+			}else {
+				System.out.println("오류");
+				continue;
+			}
+			System.out.println(i+"진수 : "+a);
+		}
+		
+	}
+}
