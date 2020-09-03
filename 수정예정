@@ -1,0 +1,65 @@
+
+public class E07 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int i=1;
+		int cnt = 0;
+		while(i<=5) {
+			int o = 1;
+			while(o<=5) {
+				cnt++;
+				System.out.print(cnt+"\t");
+				o++;
+			}
+			System.out.println();
+			i++;
+		}
+		
+		System.out.println("=============================");
+		int cnt1 = 1;
+		for(int a = 1; a<=5;a++) {
+			for(int b = 1 ; b<=a; b++) {
+				System.out.print(cnt1+"\t");
+				cnt1++;
+			}
+			System.out.println();
+		}
+		
+		System.out.println("=============================");
+		int cnt2 = 1;
+		for(int q = 5; q>=1; q--) {
+			for(int e = 1;e<=5-q;e++) {
+				System.out.print("\t");
+			}
+			for(int w = 1; w<=q;w++) {
+				System.out.print(cnt2+"\t");
+				cnt2++;
+			}
+		System.out.println();
+		}
+		System.out.println("============================");
+		int cnt3 =1;
+		for(int z = 5; z>=1; z--) {
+			for(int z1 = 1; z1<=5-z; z1++)
+				System.out.print("\t");
+			for(int x = z*2-1; x>=1; x--) {
+				System.out.print(cnt3+"\t");
+				cnt3++;
+			}
+			System.out.println();
+		}
+		
+		System.out.println("============================");
+		int i1 = 1;
+		int cnt4 = 1;
+		while(i1<=5) {
+			int i2=1;
+			while(i2<=5) {
+				i2++;
+			System.out.println();
+			i1++;
+		}
+	
+	}
+}
