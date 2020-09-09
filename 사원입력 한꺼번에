@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+/*
+ * 키보드 입력
+ * 사원번호 출장비지급액
+ * 입력예시
+ * 입력 : 1234 152360
+ * 입력 : 2005 235675
+ * 입력 : 2120 198700
+ * . . . . . . . . 
+ * 입력 : 0000 -> 입력종료
+ * 1.사원수 최대 10명이내로 한다.
+ * 
+ * [출력예시]
+ * 사원번호 출장비지급액 오만 일만 오천 일천 오백 일백 오십 일십 오 일
+ * 1234  142360   3  0  0  2  0  3  1  1  0  0
+ * . . . . .. . . .. . . . .. . . . . . .. . .. 
+ *  전체 화패 매수 --------------
+ *  
+ */
+public class E03 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scanner = new Scanner(System.in);
+		int[] money = {50000,10000,5000,1000,500,100,50,10,5,1}; // 나눠주는 값들
+		int[] payment = new int[10]; // 출장비 지급액
+		int[] printmoney = new int[10]; //화패매수
+		int[] identifynumber = new int[10]; // 사원번호
+		
+		for(int i = 0; i <10; i++) {
+			System.out.print("입력 : ");
+			identifynumber[i] = scanner.nextInt(); 
+			if (identifynumber[i] == 0) {			//사원번호
+				break;
+			}
+			payment[i] = scanner.nextInt();			//출장비 지급액 입력
+			int temp = payment[i];					// payment[i]대신에 temp변수선언
+			for(int k = 0 ;k<money.length;k++) {
+				printmoney[k] = temp /money[k];			//payment[i]썼더니 오류 -> 변수선언 해주지 않으면 배열안에 넣는값이
+				temp %= money[k];//payment[i]를 못쓰는이유 ->//변하게 되니깐 변수를 사용하는거다.
+			}
+
+		}
+		System.out.println("사원번호  출장비지급액  오만  일만  오천  일천  오백  일백  오십  일십  오  일");
+		
+		for(int k = 0; k<10; k++) {
+			System.out.print(identifynumber[k]+"  ");
+			System.out.print(payment[k]+"  ");
+			System.out.print(printmoney[k] + "  ");}
+		scanner.close();
+	}
+}
