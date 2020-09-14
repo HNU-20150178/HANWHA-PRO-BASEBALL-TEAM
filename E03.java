@@ -1,76 +1,44 @@
-
+class Student{
+	int bun =1;
+	String name ="김학생";
+	int age = 31;
+	/*int bun;
+	String name;
+	int age;
+	//이건 묵시적인 초기화 값을 여기다가 넣으면 명시적인 초기화
+	*/
+	void print() {
+		System.out.print("번호 : "+ bun+"\n");
+		System.out.print("이름 : "+ name+"\n");
+		System.out.print("나이 : "+ age+"\n");
+	}
+	
+}
 public class E03 {
 
 	public static void main(String[] args) {
-/*
-		int [][] arr = new int[5][5];
-		int cnt = 0;
-		for(int i = 0; i<arr.length ;i++) {
-			cnt++;
-			arr[i][0]=cnt;
-			for(int o = 0; o<arr.length; o++) {
-				arr[i][o]=(arr[i][0]+(5*o));
-			}
-		}
-		for(int x = 0; x<arr.length; x++) {
-			for(int y = 0; y<arr.length; y++) {
-				System.out.print(arr[x][y]+"\t");
-			}
-			System.out.println();
-			
-			 //1 번 문제
-*/
+		// TODO Auto-generated method stub
+		Student student1 = new Student();
+		System.out.println(student1);
+		student1.print();
+	
+		Student student2 = new Student();
+		System.out.println(student2);
+		student2.bun =2;
+		student2.name = "노홍철";
+		student2.age = 28;
+		student2.print();
+		
+		Student student3 = student1;
+		System.out.println(student3);
+		student3.print();
 		
 		
 		
-/*		int [][] arr = new int[5][5];
-		int cnt = 0;
-		for(int i = 0; i<arr.length ;i++) {
-			for(int o = 0; o<i+1; o++) {
-				cnt++;
-				arr[i][o]=cnt;
-				
-			}
-		}
-		for(int x = 0; x<arr.length; x++) {
-			for(int y = 0; y<arr.length; y++) {
-				System.out.print(arr[x][y]+"\t");
-			}
-			System.out.println();   //2번문제
-*/
-		int [][] arr = new int[5][5];
-		int cnt1 = 0;
-		int cnt2 = 0;
-		boolean bool = true;
-		for(int i = 0; i<arr.length ;i++) {
-			if(bool) {
-				for(int o = 0; o<arr.length; o++) {
-					cnt1++;
-					arr[i][o] = cnt1;
-					if(cnt1 == 5 || cnt2==15) {
-						cnt2=cnt1+5;
-						bool=false;
-					}
-				}
-			}else {
-				for(int o = 0; o<arr.length;o++) {
-					arr[i][o] = cnt2;
-					cnt2--;
-					if(cnt2==6||cnt2==15) {
-						cnt1=cnt2+5;
-						bool=true;
-					}
-				}
-			}
-		}
-		
-		for(int x = 0; x<arr.length; x++) {
-			for(int y = 0; y<arr.length; y++) {
-				System.out.print(arr[x][y]+"\t");
-			}
-			System.out.println();
-		}//출력포함
-		
+	
 	}
+	
+	
+	
 
 }
