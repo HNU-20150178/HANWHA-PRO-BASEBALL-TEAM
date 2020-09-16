@@ -3,7 +3,7 @@ public class E01 {
 	public static void print(Parking[] park1, int cnt) {
 		System.out.print("자돈차번호\t주차시간\t주차요금\n");
 		for(int i = 0; i<cnt; i++) {
-			System.out.println(park1[i].carNo + "\t" + park1[i].parkTime + "\t" + park1[i]);
+			System.out.println(park1[i].carNo + "\t" + park1[i].parkTime + "\t" + park1[i].money);
 		}
 	}
 
