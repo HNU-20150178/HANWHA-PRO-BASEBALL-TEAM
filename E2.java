@@ -23,7 +23,7 @@ import java.util.Scanner;
  * 
  */
 
-public class E01 {
+public class E2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -31,7 +31,7 @@ public class E01 {
 		Student[] student1 = new Student[10];
 		int cnt = 0;
 		while(cnt<10) {
-			System.out.print("학생등록 : ");
+			System.out.println("학생등록 : ");
 			int sNum = scn.nextInt(); //번호입력
 			if(sNum == -99) {  // 종료조건
 				break;
@@ -42,16 +42,21 @@ public class E01 {
 			student1[cnt]=student; // student에 저장된 값을 
 			cnt++;
 		}
-		System.out.print("입력자료 출력 :");
+		System.out.print("입력자료 출력 : -1");
 		System.out.println("번호\t이름\t나이");
 		for(int x = 0; x<cnt; x++) {
-			System.out.print(student1[x].sNum+"\t");
-			System.out.print(student1[x].sName+"\t");
-			System.out.print(student1[x].sAge+"\t");
+			student1[x].stuPrint();
 		}
-		
 		scn.close();
 		
+		StudentData s = new StudentData();
+		s.stuSort(student1, cnt);
+		
+		System.out.println("입력자료 출력 : -2");
+		System.out.println("번호\t이름\t나이");
+		for(int x = 0; x<cnt; x++) {
+			student1[x].stuPrint();
+		}
 	}
 
 }

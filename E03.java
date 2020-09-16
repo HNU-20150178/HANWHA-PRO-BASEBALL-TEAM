@@ -1,76 +1,41 @@
-
+//메소드 오
+class AA{
+	public void add(int a, int b) {
+		
+	}
+	public int add(int a, double b) {
+		
+		return 0;
+	}
+	public void add(int a , int b , int c) {
+		int s = a+b+c;
+	}
+	public void add2(int ... a) {   // 가변인자 선언 배열이 된다. 가변인자는 이름을 다르게 선언한다.
+		int s = 0;
+		for(int x=0; x<=a.length; x++) {
+			s+=a[x];
+		}
+		System.out.println(s);
+	}
+	public void add3(int[] a) {
+		int s=0;
+		for(int x=0; x<a.length; x++) {
+			s+=a[x];
+		}
+		System.out.println(s);
+	}
+}
 public class E03 {
 
 	public static void main(String[] args) {
-/*
-		int [][] arr = new int[5][5];
-		int cnt = 0;
-		for(int i = 0; i<arr.length ;i++) {
-			cnt++;
-			arr[i][0]=cnt;
-			for(int o = 0; o<arr.length; o++) {
-				arr[i][o]=(arr[i][0]+(5*o));
-			}
-		}
-		for(int x = 0; x<arr.length; x++) {
-			for(int y = 0; y<arr.length; y++) {
-				System.out.print(arr[x][y]+"\t");
-			}
-			System.out.println();
-			
-			 //1 번 문제
-*/
-		
-		
-		
-/*		int [][] arr = new int[5][5];
-		int cnt = 0;
-		for(int i = 0; i<arr.length ;i++) {
-			for(int o = 0; o<i+1; o++) {
-				cnt++;
-				arr[i][o]=cnt;
-				
-			}
-		}
-		for(int x = 0; x<arr.length; x++) {
-			for(int y = 0; y<arr.length; y++) {
-				System.out.print(arr[x][y]+"\t");
-			}
-			System.out.println();   //2번문제
-*/
-		int [][] arr = new int[5][5];
-		int cnt1 = 0;
-		int cnt2 = 0;
-		boolean bool = true;
-		for(int i = 0; i<arr.length ;i++) {
-			if(bool) {
-				for(int o = 0; o<arr.length; o++) {
-					cnt1++;
-					arr[i][o] = cnt1;
-					if(cnt1 == 5 || cnt2==15) {
-						cnt2=cnt1+5;
-						bool=false;
-					}
-				}
-			}else {
-				for(int o = 0; o<arr.length;o++) {
-					arr[i][o] = cnt2;
-					cnt2--;
-					if(cnt2==6||cnt2==15) {
-						cnt1=cnt2+5;
-						bool=true;
-					}
-				}
-			}
-		}
-		
-		for(int x = 0; x<arr.length; x++) {
-			for(int y = 0; y<arr.length; y++) {
-				System.out.print(arr[x][y]+"\t");
-			}
-			System.out.println();
-		}//출력포함
-		
+		// TODO Auto-generated method stub
+		AA a = new AA();
+		a.add(1, 2);
+		a.add(1,2,3);
+		a.add2(1,2,3,4);
+		a.add2(1,2,3,4,5,6,7,6,4,3,2,1);
+		int[] s = {1,2,3,4,5,6};
+		a.add3(s);
 	}
 
 }
