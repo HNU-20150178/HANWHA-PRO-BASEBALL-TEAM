@@ -1,22 +1,30 @@
-
+import java.util.Scanner;
 public class E01 {
+	public static void print(Parking[] park1, int cnt) {
+		System.out.print("자돈차번호\t주차시간\t주차요금\n");
+		for(int i = 0; i<cnt; i++) {
+			System.out.println(park1[i].carNo + "\t" + park1[i].parkTime + "\t" + park1[i]);
+		}
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int a[][] = new int[5][5]; // 이럴떄 다중 for 문
+		Scanner scn = new Scanner(System.in);
+		Parking[] park1 = new Parking[100]; //
 		int cnt = 0;
-		for(int x = 0; x<a.length;x++) {
-			for(int y = 0; y<a[x].length; y++) {
-				cnt++;
-				a[x][y]=cnt;
+		while(cnt<100) {
+			System.out.print("주차정보 : ");
+			String carNo = scn.next();
+			if(carNo.equals("0000")) {
+				break;
 			}
+			int parkTime = scn.nextInt();
+			park1[cnt] = new Parking(carNo,parkTime);
+			cnt++;
 		}
-		//출력
-		for(int i = 0; i<a.length; i++) {
-			for(int o = 0; o<a[i].length;o++) {
-				System.out.print(a[i][o]+"\t");
-			}
-			System.out.println();
-		}
+		print(park1,cnt);
+		scn.close();
+	
 	}
+
 }
