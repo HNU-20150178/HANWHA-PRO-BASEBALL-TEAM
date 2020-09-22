@@ -1,0 +1,100 @@
+abstract class Student{
+	int bun;
+	String name;
+	int[] score;
+	int tot ;
+	double ave;
+	public Student(int bun,String name, int[] score) {
+		this.bun = bun;
+		this.name = name;
+		this.score = score;
+	}
+	public void print() {
+		System.out.println("번호\t이름\t총점\t평균");
+		System.out.println(bun + "\t"+ name + "\t" + tot + "\t" + ave);
+	}
+	public abstract void account(); // 총점 평균 계산
+	
+	public abstract void scoreMax(); // 최소 점수 : xxx 최대점수 : xxx
+	
+	public abstract void scoreSelectionSort(); // 선택정렬 오름차순
+	
+	public abstract void scoreBubbleSort(); //버블정렬 내림차순
+}
+
+
+class StudentExam extends Student{
+	public StudentExam(int bun, String name, int[] score) {
+		super(bun, name, score);
+	}
+	@Override
+	public void account() {
+		for(int i = 0; i<score.length; i++) {
+			tot+=score[i];
+		}
+		ave=tot/score.length;
+	}
+
+	@Override
+	public void scoreMax() {
+		int most = score[0];
+		int least = score[0];
+		for(int i = 0; i<score.length; i++) {
+			if(most<score[i]) {
+				most = score[i];
+			}
+			if(least>score[i]) {
+				least = score[i];
+			}
+		}
+		System.out.print("최소 점수 : " + least+"\t");
+		System.out.println("최대 점수 : " + most);
+	}
+
+	@Override
+	public void scoreSelectionSort() {
+		for(int i = 0; i<score.length; i++) {
+			for(int k = 0; k<score.length; k++) {
+				if(score[i]<score[k]) {
+					int imsi = score [i];
+					score[i] = score[k];
+					score[k] = imsi;
+				}
+			}
+		}
+	}
+
+	@Override
+	public void scoreBubbleSort() {
+		for(int i = 0; i<score.length; i++) {
+			for(int k = 0; k<score.length-i-1; k++) {
+				if(score[k]<score[k+1]) {
+					int imsi = score[k];
+					score[k] = score[k+1];
+					score[k+1] = imsi;
+				}
+			}
+		}
+	}
+}
+public class E04 {
+
+	public static void main(String[] args) {
+		int bun = 1101;
+		String name = "JAVA";
+		int[] score = {90,66,46,45,20,80,64,48,93,37,18,94,50};
+		StudentExam stu = new StudentExam(bun,name,score);
+		stu.account();
+		stu.print();
+		stu.scoreMax();
+		stu.scoreSelectionSort();
+		for(int i = 0; i <score.length; i++) {
+			System.out.print(score[i]+"\t");
+		}
+		stu.scoreBubbleSort();
+		System.out.println();
+		for(int i = 0; i <score.length; i++) {
+			System.out.print(score[i]+"\t");
+		}
+	}
+}
