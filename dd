@@ -1,0 +1,42 @@
+public class Hak {
+	int bun;
+	String name;
+	int score;
+	
+	void print() {
+		System.out.println(bun+"\t"+name+"\t"+score);
+	}
+}
+
+interface Account{
+	public void total(int[] score);
+	public void print();
+}
+
+public class HakData extends Hak implements Account{
+	@Override
+	public void print() {
+		super.print();
+	}
+	
+	HakData(int bun ,String name, int score){
+		super.bun = bun;
+		super.name = name;
+		super.score = score;
+	}
+	@Override
+	public void total(int[] score) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+}
+public class HakExam {
+	public static void main(String[] args) {
+		Hak data = new HakData(1,"홍길동",90);
+		data.print();
+		data = new HakData(1,"홍길동", new int[] {90,80,70,60,90});
+		data.print();
+	}
+}
